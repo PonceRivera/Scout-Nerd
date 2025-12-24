@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#121212</color>
+    <color name="black">#000000</color>
+    <color name="error">#CF6679</color>
+    <color name="primary">#2196F3</color>
+    <color name="primary_variant">#1976D2</color>
+    <color name="secondary">#FFC107</color>
+    <color name="secondary_variant">#FFA000</color>
+    <color name="surface">#1E1E1E</color>
+    <color name="surface_variant">#2C2C2C</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_on_secondary">#000000</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="white">#FFFFFF</color>
+    <string name="app_name">Scout Nerd</string>
+    <style name="Base.Theme.ScoutNerd" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_variant</item>
+        <item name="colorOnPrimary">@color/text_on_primary</item>
+        
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary_variant</item>
+        <item name="colorOnSecondary">@color/text_on_secondary</item>
+
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="android:textColor">@color/text_primary</item>
+        
+        
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+    <style name="Theme.ScoutNerd" parent="Base.Theme.ScoutNerd"/>
+</resources>

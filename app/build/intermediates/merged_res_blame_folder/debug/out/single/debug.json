@@ -1,0 +1,82 @@
+[
+    {
+        "merged": "com.scoutnerd.app-merged_res-46:/layout_fragment_match_scout.xml.flat",
+        "source": "com.scoutnerd.app-main-48:/layout/fragment_match_scout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-merged_res-46:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-main-48:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-merged_res-46:\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-main-48:\\navigation\\nav_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-merged_res-46:\\drawable_ic_group.xml.flat",
+        "source": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-main-48:\\drawable\\ic_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-merged_res-46:\\drawable_ic_gamepad.xml.flat",
+        "source": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-main-48:\\drawable\\ic_gamepad.xml"
+    },
+    {
+        "merged": "com.scoutnerd.app-merged_res-46:/layout_fragment_analytics.xml.flat",
+        "source": "com.scoutnerd.app-main-48:/layout/fragment_analytics.xml"
+    },
+    {
+        "merged": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-merged_res-46:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-main-48:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-merged_res-46:\\layout_fragment_team_list.xml.flat",
+        "source": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-main-48:\\layout\\fragment_team_list.xml"
+    },
+    {
+        "merged": "com.scoutnerd.app-merged_res-46:/layout_fragment_event_selection.xml.flat",
+        "source": "com.scoutnerd.app-main-48:/layout/fragment_event_selection.xml"
+    },
+    {
+        "merged": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-merged_res-46:\\drawable_ic_settings.xml.flat",
+        "source": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-main-48:\\drawable\\ic_settings.xml"
+    },
+    {
+        "merged": "com.scoutnerd.app-merged_res-46:/navigation_nav_graph.xml.flat",
+        "source": "com.scoutnerd.app-main-48:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-merged_res-46:\\drawable_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-main-48:\\drawable\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-merged_res-46:\\layout_item_team.xml.flat",
+        "source": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-main-48:\\layout\\item_team.xml"
+    },
+    {
+        "merged": "com.scoutnerd.app-merged_res-46:/layout_fragment_pit_scout.xml.flat",
+        "source": "com.scoutnerd.app-main-48:/layout/fragment_pit_scout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-merged_res-46:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-main-48:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-merged_res-46:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-main-48:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-merged_res-46:\\drawable_ic_tools.xml.flat",
+        "source": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-main-48:\\drawable\\ic_tools.xml"
+    },
+    {
+        "merged": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-merged_res-46:\\drawable_ic_calendar.xml.flat",
+        "source": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-main-48:\\drawable\\ic_calendar.xml"
+    },
+    {
+        "merged": "com.scoutnerd.app-merged_res-46:/layout_fragment_settings.xml.flat",
+        "source": "com.scoutnerd.app-main-48:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-merged_res-46:\\drawable_ic_analytics.xml.flat",
+        "source": "C:\\Users\\Crist\\.gradle\\daemon\\9.0-milestone-1\\com.scoutnerd.app-main-48:\\drawable\\ic_analytics.xml"
+    }
+]

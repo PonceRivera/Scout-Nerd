@@ -1,0 +1,49 @@
+com.scoutnerd.app-slidingpanelayout-1.2.0-0 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\08c7fbb5b6c4a52a4b04afd436f2fd88\transformed\slidingpanelayout-1.2.0\res
+com.scoutnerd.app-lifecycle-viewmodel-2.7.0-1 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\1317c83c27a16f404caf296439b1f4bd\transformed\lifecycle-viewmodel-2.7.0\res
+com.scoutnerd.app-recyclerview-1.1.0-2 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\1b51677a1652cb9221e4b9a8adab958a\transformed\recyclerview-1.1.0\res
+com.scoutnerd.app-navigation-ui-2.7.6-3 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\1daa874d49f915e3dd3f0a20a8a1bdba\transformed\navigation-ui-2.7.6\res
+com.scoutnerd.app-jetified-savedstate-ktx-1.2.1-4 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\218005a29876572fb5cd447f928e7dad\transformed\jetified-savedstate-ktx-1.2.1\res
+com.scoutnerd.app-constraintlayout-2.1.4-5 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\277acb44cda5a039f8c9dd6e3f6ef4b6\transformed\constraintlayout-2.1.4\res
+com.scoutnerd.app-jetified-savedstate-1.2.1-6 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\2c731ecc5f2407070b6be38cf6cd1102\transformed\jetified-savedstate-1.2.1\res
+com.scoutnerd.app-jetified-activity-ktx-1.8.0-7 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\30a4f2593e04fd67a25a0e1e00f6f903\transformed\jetified-activity-ktx-1.8.0\res
+com.scoutnerd.app-jetified-viewpager2-1.0.0-8 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\35bc342abfc051dea58cb49b4563e08f\transformed\jetified-viewpager2-1.0.0\res
+com.scoutnerd.app-jetified-appcompat-resources-1.6.1-9 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\36f5d57051deeec07ee10e777abdb601\transformed\jetified-appcompat-resources-1.6.1\res
+com.scoutnerd.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-10 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\3c9474e85ecb4b8ad495cff74106071a\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
+com.scoutnerd.app-sqlite-2.4.0-11 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\40af59d733ec85edd729624f22b67747\transformed\sqlite-2.4.0\res
+com.scoutnerd.app-jetified-emoji2-1.2.0-12 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\res
+com.scoutnerd.app-jetified-annotation-experimental-1.3.0-13 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\435e2a7652ab22e68792c3d1bbc497b0\transformed\jetified-annotation-experimental-1.3.0\res
+com.scoutnerd.app-core-1.9.0-14 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\res
+com.scoutnerd.app-lifecycle-runtime-2.7.0-15 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\44b106d051d6657007ad91d6959369c2\transformed\lifecycle-runtime-2.7.0\res
+com.scoutnerd.app-drawerlayout-1.1.1-16 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\55b04a34d5ad6611e2e939a160c95b12\transformed\drawerlayout-1.1.1\res
+com.scoutnerd.app-jetified-emoji2-views-helper-1.2.0-17 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\57c6aea98a768faf5d44d3ee1a2dda88\transformed\jetified-emoji2-views-helper-1.2.0\res
+com.scoutnerd.app-core-runtime-2.2.0-18 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\583aae820793e5e8767d99a926d8a12b\transformed\core-runtime-2.2.0\res
+com.scoutnerd.app-sqlite-framework-2.4.0-19 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\588021c3d16586f2aedd672af0426f89\transformed\sqlite-framework-2.4.0\res
+com.scoutnerd.app-material-1.11.0-20 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\5a1d71a04bdc553bf688ba17ca70df95\transformed\material-1.11.0\res
+com.scoutnerd.app-navigation-common-2.7.6-21 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\5b5f476686580f65ee81729e90338152\transformed\navigation-common-2.7.6\res
+com.scoutnerd.app-jetified-lifecycle-livedata-core-ktx-2.7.0-22 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\68c70d963657a370e3798fdcd38addb8\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\res
+com.scoutnerd.app-lifecycle-livedata-core-2.7.0-23 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\711eb433ab0b4a5e607a633ae714f557\transformed\lifecycle-livedata-core-2.7.0\res
+com.scoutnerd.app-jetified-activity-1.8.0-24 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\75b4789667fbe09fad7b27d1bf513ac6\transformed\jetified-activity-1.8.0\res
+com.scoutnerd.app-transition-1.4.1-25 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\7a6938e4f8589ef5a19b3700d2a8b53b\transformed\transition-1.4.1\res
+com.scoutnerd.app-cardview-1.0.0-26 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\7c9a346f0829635f6b7062ccc39f44bb\transformed\cardview-1.0.0\res
+com.scoutnerd.app-room-runtime-2.6.1-27 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\7d0d62694a60ee9de188897cec2507d2\transformed\room-runtime-2.6.1\res
+com.scoutnerd.app-appcompat-1.6.1-28 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\7ff9ee7482a8dc9b9850645cff3f693b\transformed\appcompat-1.6.1\res
+com.scoutnerd.app-jetified-startup-runtime-1.1.1-29 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\837b61c9cc7410d5106975a5151fd797\transformed\jetified-startup-runtime-1.1.1\res
+com.scoutnerd.app-jetified-lifecycle-viewmodel-ktx-2.7.0-30 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\873926c05c37c1fb143ecf94740e5ae7\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\res
+com.scoutnerd.app-navigation-fragment-2.7.6-31 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\87db725511be59dc85330e508ec30f2e\transformed\navigation-fragment-2.7.6\res
+com.scoutnerd.app-lifecycle-livedata-2.7.0-32 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\8848bc8b5cd7be06f85a08e9e2559f02\transformed\lifecycle-livedata-2.7.0\res
+com.scoutnerd.app-navigation-runtime-2.7.6-33 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\9bf639ae60ff0dcc050aed7179c34cc2\transformed\navigation-runtime-2.7.6\res
+com.scoutnerd.app-jetified-profileinstaller-1.3.0-34 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\a1c67589005762ba442722aab9349172\transformed\jetified-profileinstaller-1.3.0\res
+com.scoutnerd.app-jetified-core-ktx-1.9.0-35 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\b161200b14bcab6df21b2fd2620c6048\transformed\jetified-core-ktx-1.9.0\res
+com.scoutnerd.app-fragment-1.6.2-36 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\b55d2d6b787b4b5b3c8141ec4ac9de5f\transformed\fragment-1.6.2\res
+com.scoutnerd.app-jetified-lifecycle-process-2.7.0-37 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\b92fed815df54755a482d2cbb76593a3\transformed\jetified-lifecycle-process-2.7.0\res
+com.scoutnerd.app-jetified-fragment-ktx-1.6.2-38 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\ca1836c89659098fd71c5b189dc2ce35\transformed\jetified-fragment-ktx-1.6.2\res
+com.scoutnerd.app-jetified-lifecycle-runtime-ktx-2.7.0-39 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\cc01c95b82b6b08691aa2c97afb220e0\transformed\jetified-lifecycle-runtime-ktx-2.7.0\res
+com.scoutnerd.app-jetified-window-1.0.0-40 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\ddce2cd0ea74c9251dd6d3a61afcf49d\transformed\jetified-window-1.0.0\res
+com.scoutnerd.app-coordinatorlayout-1.1.0-41 C:\Users\Crist\.gradle\caches\9.0-milestone-1\transforms\e5080c1122a0e41dd46eedda2666cf1b\transformed\coordinatorlayout-1.1.0\res
+com.scoutnerd.app-pngs-42 C:\Users\Crist\Desktop\Scout Nerd\app\build\generated\res\pngs\debug
+com.scoutnerd.app-resValues-43 C:\Users\Crist\Desktop\Scout Nerd\app\build\generated\res\resValues\debug
+com.scoutnerd.app-packageDebugResources-44 C:\Users\Crist\Desktop\Scout Nerd\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.scoutnerd.app-packageDebugResources-45 C:\Users\Crist\Desktop\Scout Nerd\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.scoutnerd.app-merged_res-46 C:\Users\Crist\Desktop\Scout Nerd\app\build\intermediates\merged_res\debug
+com.scoutnerd.app-debug-47 C:\Users\Crist\Desktop\Scout Nerd\app\src\debug\res
+com.scoutnerd.app-main-48 C:\Users\Crist\Desktop\Scout Nerd\app\src\main\res
