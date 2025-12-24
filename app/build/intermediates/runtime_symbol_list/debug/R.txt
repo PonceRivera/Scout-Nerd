@@ -3237,6 +3237,7 @@ int id bounce 0x7f080060
 int id bounceBoth 0x7f080061
 int id bounceEnd 0x7f080062
 int id bounceStart 0x7f080063
+int id btn_start_scouting 0x7f080216
 int id buttonPanel 0x7f080064
 int id cache_measures 0x7f080065
 int id callMeasure 0x7f080066
@@ -3370,6 +3371,7 @@ int id immediateStop 0x7f0800dd
 int id included 0x7f0800de
 int id indeterminate 0x7f0800df
 int id info 0x7f0800e0
+int id input_match_number 0x7f080217
 int id invisible 0x7f0800e1
 int id inward 0x7f0800e2
 int id italic 0x7f0800e3
@@ -3417,6 +3419,7 @@ int id material_timepicker_view 0x7f08010a
 int id material_value_index 0x7f08010b
 int id matrix 0x7f08010c
 int id message 0x7f08010d
+int id metrics_container 0x7f080218
 int id middle 0x7f08010e
 int id mini 0x7f08010f
 int id month_grid 0x7f080110
@@ -3543,6 +3546,7 @@ int id search_go_btn 0x7f080186
 int id search_mag_icon 0x7f080187
 int id search_plate 0x7f080188
 int id search_src_text 0x7f080189
+int id search_teams 0x7f080219
 int id search_voice_btn 0x7f08018a
 int id select_dialog_listview 0x7f08018b
 int id selected 0x7f08018c
@@ -3611,6 +3615,7 @@ int id textSpacerNoTitle 0x7f0801c9
 int id textStart 0x7f0801ca
 int id textTop 0x7f0801cb
 int id text_app_title 0x7f080208
+int id text_avg_score 0x7f08021a
 int id text_current_event_name 0x7f080209
 int id text_input_end_icon 0x7f0801cc
 int id text_input_error_icon 0x7f0801cd
@@ -3618,6 +3623,8 @@ int id text_input_start_icon 0x7f0801ce
 int id text_team_location 0x7f0801d0
 int id text_team_nickname 0x7f0801d1
 int id text_team_number 0x7f0801d2
+int id text_top_teams 0x7f08021b
+int id text_total_matches 0x7f08021c
 int id text_welcome 0x7f08020a
 int id textinput_counter 0x7f0801d3
 int id textinput_error 0x7f0801d4

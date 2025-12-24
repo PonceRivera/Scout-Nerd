@@ -25,6 +25,10 @@
             android:layout_height="wrap_content"
             android:hint="Team Number"
             android:layout_marginBottom="16dp"
+            app:hintTextColor="@color/secondary"
+            android:textColorHint="@color/text_secondary"
+            app:boxStrokeColor="@color/secondary"
+            app:boxStrokeWidth="2dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -58,6 +62,9 @@
                     android:layout_height="wrap_content"
                     android:hint="Drivetrain Type (e.g. Swerve)"
                     android:layout_marginBottom="12dp"
+                    app:hintTextColor="@color/secondary"
+                    android:textColorHint="@color/text_secondary"
+                    app:boxStrokeColor="@color/secondary"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -70,6 +77,9 @@
                     android:layout_height="wrap_content"
                     android:hint="Weight (lbs)"
                     android:layout_marginBottom="12dp"
+                    app:hintTextColor="@color/secondary"
+                    android:textColorHint="@color/text_secondary"
+                    app:boxStrokeColor="@color/secondary"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -82,6 +92,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Programming Language"
+                    app:hintTextColor="@color/secondary"
+                    android:textColorHint="@color/text_secondary"
+                    app:boxStrokeColor="@color/secondary"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"

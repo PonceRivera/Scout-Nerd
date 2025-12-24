@@ -102,8 +102,73 @@ public class ScoutRepository {
             }
 
             @Override
-            public void onFailure(@NonNull Call<List<com.scoutnerd.app.data.api.model.ApiTeam>> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<List<com.scoutnerd.app.data.api.model.ApiTeam>> call,
+                    @NonNull Throwable t) {
                 // Log error
+            }
+        });
+    }
+    // --- Metrics & Results ---
+
+    public LiveData<List<com.scoutnerd.app.data.local.entity.MetricEntity>> getActiveMetrics() {
+        return mDb.metricDao().getAllMetrics();
+    }
+
+    public void saveMatchResult(com.scoutnerd.app.data.local.entity.MatchResultEntity result) {
+        mExecutors.diskIO().execute(() -> {
+            mDb.matchResultDao().insert(result);
+        });
+    }
+
+    /**
+     * Initializes the database with default metrics for the 2025 season if none
+     * exist.
+     */
+    public void initializeDefaults() {
+        mExecutors.diskIO().execute(() -> {
+            if (mDb.metricDao().getCount() == 0) {
+                List<com.scoutnerd.app.data.local.entity.MetricEntity> defaults = new ArrayList<>();
+
+                // AUTO
+                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Auto Line",
+                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_BOOLEAN,
+                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_AUTO, 0));
+                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Coral Level 1",
+                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_COUNTER,
+                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_AUTO, 1));
+                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Coral Level 2",
+                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_COUNTER,
+                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_AUTO, 2));
+
+                // TELEOP
+                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Coral Level 1",
+                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_COUNTER,
+                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_TELEOP, 10));
+                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Coral Level 2",
+                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_COUNTER,
+                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_TELEOP, 11));
+                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Coral Level 3",
+                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_COUNTER,
+                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_TELEOP, 12));
+                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Coral Level 4",
+                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_COUNTER,
+                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_TELEOP, 13));
+                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Algae Processed",
+                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_COUNTER,
+                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_TELEOP, 14));
+                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Defense Rating",
+                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_SLIDER,
+                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_TELEOP, 15));
+
+                // ENDGAME
+                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Climb Successful",
+                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_BOOLEAN,
+                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_ENDGAME, 20));
+                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Notes",
+                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_TEXT,
+                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_ENDGAME, 21));
+
+                mDb.metricDao().insertAll(defaults);
             }
         });
     }

@@ -54,6 +54,7 @@
                     android:hint="Match Number"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_match_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number"
@@ -62,57 +63,19 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.Material3.CardView.Filled"
+        <!-- Dynamic Form Container -->
+        <LinearLayout
+            android:id="@+id/metrics_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/surface"
-            android:layout_marginBottom="24dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-                
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Team Selection (Mock)"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="8dp"/>
-
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Red 1: 254"
-                        android:textColor="@color/text_secondary"/>
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Red 2: 118"
-                        android:textColor="@color/text_secondary"/>
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Blue 1: 1678"
-                        android:textColor="@color/text_secondary"/>
-                     <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Blue 2: 973"
-                        android:textColor="@color/text_secondary"/>
-                </RadioGroup>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp"/>
 
         <Button
+            android:id="@+id/btn_start_scouting"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="Start Scouting"
+            android:text="Save Match Data"
             android:textStyle="bold"
             app:backgroundTint="@color/primary"/>
 

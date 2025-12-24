@@ -46,6 +46,24 @@ public class TeamListFragment extends Fragment {
         // found.
         mViewModel.setEventKey(DEFAULT_EVENT_KEY);
 
+        android.widget.EditText searchInput = view.findViewById(R.id.search_teams);
+        if (searchInput != null) {
+            searchInput.addTextChangedListener(new android.text.TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    mViewModel.setSearchQuery(s.toString());
+                }
+
+                @Override
+                public void afterTextChanged(android.text.Editable s) {
+                }
+            });
+        }
+
         mViewModel.getTeams().observe(getViewLifecycleOwner(), teams -> {
             mAdapter.setTeams(teams);
         });

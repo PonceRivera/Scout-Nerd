@@ -32,6 +32,14 @@
         
         <item name="android:statusBarColor">@color/background</item>
         <item name="android:windowLightStatusBar">false</item>
+        
+        
+        <item name="android:textColorHint">@color/text_secondary</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        
+        
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
     </style>
     <style name="Theme.ScoutNerd" parent="Base.Theme.ScoutNerd"/>
 </resources>

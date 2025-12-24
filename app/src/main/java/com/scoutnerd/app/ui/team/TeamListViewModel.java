@@ -16,7 +16,8 @@ public class TeamListViewModel extends AndroidViewModel {
 
     private final ScoutRepository mRepository;
     private final MutableLiveData<String> mEventKey = new MutableLiveData<>();
-    private final LiveData<List<TeamEntity>> mTeams;
+    private final MutableLiveData<String> mSearchQuery = new MutableLiveData<>("");
+    private final LiveData<List<TeamEntity>> mFilteredTeams;
 
     public TeamListViewModel(@NonNull Application application) {
         super(application);
@@ -24,11 +25,29 @@ public class TeamListViewModel extends AndroidViewModel {
                 AppDatabase.getDatabase(application),
                 AppExecutors.getInstance());
 
-        mTeams = Transformations.switchMap(mEventKey, key -> {
+        // Load specific event teams
+        LiveData<List<TeamEntity>> allTeams = Transformations.switchMap(mEventKey, key -> {
             if (key == null) {
                 return new MutableLiveData<>();
             }
             return mRepository.getTeamsAtEvent(key);
+        });
+
+        // Filter whenever query or list changes
+        mFilteredTeams = Transformations.switchMap(allTeams, teams -> {
+            return Transformations.map(mSearchQuery, query -> {
+                if (query == null || query.isEmpty()) {
+                    return teams;
+                }
+                List<TeamEntity> filtered = new java.util.ArrayList<>();
+                for (TeamEntity team : teams) {
+                    if (String.valueOf(team.teamNumber).contains(query) ||
+                            (team.nickname != null && team.nickname.toLowerCase().contains(query.toLowerCase()))) {
+                        filtered.add(team);
+                    }
+                }
+                return filtered;
+            });
         });
     }
 
@@ -38,7 +57,11 @@ public class TeamListViewModel extends AndroidViewModel {
         }
     }
 
+    public void setSearchQuery(String query) {
+        mSearchQuery.setValue(query);
+    }
+
     public LiveData<List<TeamEntity>> getTeams() {
-        return mTeams;
+        return mFilteredTeams;
     }
 }

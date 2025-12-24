@@ -3238,6 +3238,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btn_start_scouting
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3371,6 +3372,7 @@ id immediateStop
 id included
 id indeterminate
 id info
+id input_match_number
 id invisible
 id inward
 id italic
@@ -3418,6 +3420,7 @@ id material_timepicker_view
 id material_value_index
 id matrix
 id message
+id metrics_container
 id middle
 id mini
 id month_grid
@@ -3544,6 +3547,7 @@ id search_go_btn
 id search_mag_icon
 id search_plate
 id search_src_text
+id search_teams
 id search_voice_btn
 id select_dialog_listview
 id selected
@@ -3612,6 +3616,7 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id text_app_title
+id text_avg_score
 id text_current_event_name
 id text_input_end_icon
 id text_input_error_icon
@@ -3619,6 +3624,8 @@ id text_input_start_icon
 id text_team_location
 id text_team_nickname
 id text_team_number
+id text_top_teams
+id text_total_matches
 id text_welcome
 id textinput_counter
 id textinput_error
