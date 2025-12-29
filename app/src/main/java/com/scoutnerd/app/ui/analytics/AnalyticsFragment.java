@@ -11,9 +11,10 @@ import com.scoutnerd.app.R;
 
 public class AnalyticsFragment extends Fragment {
     private AnalyticsViewModel mViewModel;
-    private android.widget.TextView mTopTeamsText;
+    private androidx.recyclerview.widget.RecyclerView mRecyclerView;
+    private TeamAnalyticsAdapter mAdapter;
     private android.widget.TextView mTotalMatchesText;
-    private android.widget.TextView mAvgScoreText; // Placeholder for now
+    private android.widget.TextView mAvgScoreText;
 
     @Nullable
     @Override
@@ -26,9 +27,21 @@ public class AnalyticsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mTopTeamsText = view.findViewById(R.id.text_top_teams); // Need to add ID to XML
-        mTotalMatchesText = view.findViewById(R.id.text_total_matches); // Need to add ID to XML
-        mAvgScoreText = view.findViewById(R.id.text_avg_score); // Need to add ID to XML
+        mTotalMatchesText = view.findViewById(R.id.text_total_matches);
+        mAvgScoreText = view.findViewById(R.id.text_avg_score);
+
+        mRecyclerView = view.findViewById(R.id.recycler_team_analytics);
+        mRecyclerView.setLayoutManager(new androidx.recyclerview.widget.LinearLayoutManager(getContext()));
+
+        mAdapter = new TeamAnalyticsAdapter(teamNumber -> {
+            // TODO: Navigate to Team Detail
+            android.widget.Toast.makeText(getContext(), "Clicked Team " + teamNumber, android.widget.Toast.LENGTH_SHORT)
+                    .show();
+            // Bundle args = new Bundle();
+            // args.putInt("team_number", teamNumber);
+            // Navigation.findNavController(view).navigate(R.id.to_team_detail, args);
+        });
+        mRecyclerView.setAdapter(mAdapter);
 
         mViewModel = new androidx.lifecycle.ViewModelProvider(this).get(AnalyticsViewModel.class);
 
@@ -37,37 +50,27 @@ public class AnalyticsFragment extends Fragment {
 
         // Observe Match Counts (General Activity)
         mViewModel.getTeamMatchCounts(eventKey).observe(getViewLifecycleOwner(), stats -> {
-            if (stats != null && !stats.isEmpty()) {
-                StringBuilder sb = new StringBuilder();
+            if (stats != null) {
+                mAdapter.setData(stats);
+
                 int totalMatches = 0;
-
-                // Show Top 5 most active teams
-                for (int i = 0; i < Math.min(stats.size(), 5); i++) {
-                    com.scoutnerd.app.data.local.dao.MatchResultDao.TeamMatchCount stat = stats.get(i);
-                    sb.append(String.format("%d. Team %d (%d matches)\n", i + 1, stat.teamNumber, stat.matchCount));
-                    totalMatches += stat.matchCount; // Just a sum of team-matches
+                for (com.scoutnerd.app.data.local.dao.MatchResultDao.TeamMatchCount stat : stats) {
+                    totalMatches += stat.matchCount;
                 }
-
-                mTopTeamsText.setText(sb.toString());
                 mTotalMatchesText.setText(String.valueOf(totalMatches / 6)); // Approx matches
             } else {
-                mTopTeamsText.setText("No data collected yet.");
                 mTotalMatchesText.setText("0");
             }
         });
 
-        // Observe a specific metric (e.g. Coral Level 4 - ID 13 from defaults)
-        // Note: Metric IDs might vary if auto-generated, ideally look up by name.
-        // Assuming ID 13 is "Coral Level 4" from ScoutRepository defaults.
-        mViewModel.getAvgStat(eventKey, 13).observe(getViewLifecycleOwner(), stats -> {
-            if (stats != null && !stats.isEmpty()) {
-                float globalAvg = 0;
-                for (com.scoutnerd.app.data.local.dao.MatchResultDao.TeamStat s : stats) {
-                    globalAvg += s.avgValue;
-                }
-                globalAvg /= stats.size();
+        // Observe Real Average Score
+        mViewModel.getEventAvgScore(eventKey).observe(getViewLifecycleOwner(), score -> {
+            if (score != null) {
                 if (mAvgScoreText != null)
-                    mAvgScoreText.setText(String.format("%.1f", globalAvg));
+                    mAvgScoreText.setText(String.format("%.1f", score));
+            } else {
+                if (mAvgScoreText != null)
+                    mAvgScoreText.setText("0.0");
             }
         });
     }

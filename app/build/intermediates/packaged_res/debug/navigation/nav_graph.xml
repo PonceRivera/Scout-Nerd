@@ -44,7 +44,13 @@
         android:id="@+id/matchScoutFragment"
         android:name="com.scoutnerd.app.ui.scout.MatchScoutFragment"
         android:label="Match Scout"
-        tools:layout="@layout/fragment_match_scout" />
+        tools:layout="@layout/fragment_match_scout">
+        <action
+            android:id="@+id/action_matchScoutFragment_to_analyticsFragment"
+            app:destination="@id/analyticsFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false"/>
+    </fragment>
 
     <fragment
         android:id="@+id/pitScoutFragment"

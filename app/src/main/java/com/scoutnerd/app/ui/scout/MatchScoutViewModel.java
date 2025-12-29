@@ -32,6 +32,10 @@ public class MatchScoutViewModel extends AndroidViewModel {
         return mMetrics;
     }
 
+    public LiveData<List<com.scoutnerd.app.data.local.entity.EventEntity>> getEvents(int year) {
+        return mRepository.getEvents(year);
+    }
+
     public void saveMatch(int matchNumber, int teamNumber, String eventKey, List<MatchResultEntity> results) {
         // In a real app, process the list. For now, we save one by one or batch if
         // Repository supported it.

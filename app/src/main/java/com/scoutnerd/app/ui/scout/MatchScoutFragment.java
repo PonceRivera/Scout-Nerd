@@ -225,11 +225,59 @@ public class MatchScoutFragment extends Fragment {
     }
 
     // --- Save Logic ---
+    // --- Save Logic ---
     private void saveParams() {
-        // Mock save logic for now to verify UI works
-        Toast.makeText(requireContext(), "Saved " + mLoadedMetrics.size() + " data points!", Toast.LENGTH_SHORT).show();
+        TextInputEditText teamInput = getView().findViewById(R.id.input_team_number);
+        TextInputEditText matchInput = getView().findViewById(R.id.input_match_number);
 
-        // Return to home
-        androidx.navigation.Navigation.findNavController(requireView()).navigateUp();
+        String teamStr = teamInput != null ? teamInput.getText().toString() : "";
+        String matchStr = matchInput != null ? matchInput.getText().toString() : "";
+
+        if (teamStr.isEmpty()) {
+            Toast.makeText(requireContext(), "Please enter a Team Number", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (matchStr.isEmpty()) {
+            matchStr = "1"; // Default match number
+        }
+
+        int teamNumber = Integer.parseInt(teamStr);
+        int matchNumber = Integer.parseInt(matchStr);
+        String eventKey = "2025txho"; // Hardcoded to match AnalyticsFragment for this demo
+
+        List<MatchResultEntity> results = new ArrayList<>();
+        long timestamp = System.currentTimeMillis();
+
+        for (Map.Entry<Long, View> entry : mDynamicViews.entrySet()) {
+            long metricId = entry.getKey();
+            View view = entry.getValue();
+            String value = "0";
+
+            if (view instanceof SwitchMaterial) {
+                value = String.valueOf(((SwitchMaterial) view).isChecked());
+            } else if (view instanceof LinearLayout && view.getTag() instanceof TextView) {
+                // Counter View
+                value = ((TextView) view.getTag()).getText().toString();
+            } else if (view instanceof LinearLayout && view.getTag() instanceof SeekBar) {
+                // Slider View
+                value = String.valueOf(((SeekBar) view.getTag()).getProgress());
+            } else if (view instanceof TextInputLayout) {
+                // Text View
+                EditText et = ((TextInputLayout) view).getEditText();
+                if (et != null)
+                    value = et.getText().toString();
+            }
+
+            results.add(new MatchResultEntity(matchNumber, teamNumber, eventKey, metricId, value, timestamp));
+        }
+
+        mViewModel.saveMatch(matchNumber, teamNumber, eventKey, results);
+
+        Toast.makeText(requireContext(), "Saved match " + matchNumber + " for Team " + teamNumber, Toast.LENGTH_SHORT)
+                .show();
+
+        // Navigate to Analytics as requested
+        androidx.navigation.Navigation.findNavController(requireView())
+                .navigate(R.id.action_matchScoutFragment_to_analyticsFragment);
     }
 }

@@ -30,7 +30,12 @@ public class AnalyticsViewModel extends AndroidViewModel {
     // Example stat: Average Score (Assuming metric ID 1 is total score or similar,
     // but we'll use a placeholder logic if ID doesn't exist yet)
     // Let's expose a method that fragments can call with a specific metric ID
+    // Let's expose a method that fragments can call with a specific metric ID
     public LiveData<List<MatchResultDao.TeamStat>> getAvgStat(String eventKey, long metricId) {
         return mDao.getAverageMetricStats(eventKey, metricId);
+    }
+
+    public LiveData<Float> getEventAvgScore(String eventKey) {
+        return mDao.getEventAverageScore(eventKey);
     }
 }

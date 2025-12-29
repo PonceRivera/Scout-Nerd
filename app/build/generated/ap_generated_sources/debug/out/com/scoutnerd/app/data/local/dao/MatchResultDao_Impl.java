@@ -13,6 +13,7 @@ import androidx.sqlite.db.SupportSQLiteStatement;
 import com.scoutnerd.app.data.local.entity.MatchResultEntity;
 import java.lang.Class;
 import java.lang.Exception;
+import java.lang.Float;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
@@ -257,6 +258,48 @@ public final class MatchResultDao_Impl implements MatchResultDao {
             _item.teamNumber = _cursor.getInt(_cursorIndexOfTeamNumber);
             _item.matchCount = _cursor.getInt(_cursorIndexOfMatchCount);
             _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
+  public LiveData<Float> getEventAverageScore(final String eventKey) {
+    final String _sql = "SELECT AVG(match_score) FROM (  SELECT SUM(    CASE       WHEN m.name = 'Auto Line' AND r.value = 'true' THEN 3       WHEN m.name = 'Climb Successful' AND r.value = 'true' THEN 10       WHEN m.name LIKE 'Coral Level 1' THEN 2 * CAST(r.value AS INTEGER)       WHEN m.name LIKE 'Coral Level 2' THEN 3 * CAST(r.value AS INTEGER)       WHEN m.name LIKE 'Coral Level 3' THEN 4 * CAST(r.value AS INTEGER)       WHEN m.name LIKE 'Coral Level 4' THEN 5 * CAST(r.value AS INTEGER)       WHEN m.name LIKE 'Algae%' THEN 4 * CAST(r.value AS INTEGER)       ELSE 0     END  ) as match_score   FROM match_results r   JOIN metrics m ON r.metricId = m.id   WHERE r.eventKey = ?   GROUP BY r.matchNumber, r.teamNumber)";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (eventKey == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, eventKey);
+    }
+    return __db.getInvalidationTracker().createLiveData(new String[] {"match_results",
+        "metrics"}, false, new Callable<Float>() {
+      @Override
+      @Nullable
+      public Float call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final Float _result;
+          if (_cursor.moveToFirst()) {
+            final Float _tmp;
+            if (_cursor.isNull(0)) {
+              _tmp = null;
+            } else {
+              _tmp = _cursor.getFloat(0);
+            }
+            _result = _tmp;
+          } else {
+            _result = null;
           }
           return _result;
         } finally {

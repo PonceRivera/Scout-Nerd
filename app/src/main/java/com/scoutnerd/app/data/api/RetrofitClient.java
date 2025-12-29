@@ -12,8 +12,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
 
     private static final String BASE_URL = "https://www.thebluealliance.com/api/v3/";
-    // TODO: REPLACE THIS WITH YOUR REAL API KEY
-    private static final String TBA_API_KEY = "feBheEKIZXQH7o7WlwOEahvXO9VPf9UneUfDjIrcivuQgwBhFsCNmZNYeEK6L8V7";
+    // api key: LKzrbUe1YJfAU2kOBjviYLoDHLAbKTvf5ASi9qD5NeprwEv7Jc4r0zAg1GH1ysXi
+    private static final String TBA_API_KEY = "LKzrbUe1YJfAU2kOBjviYLoDHLAbKTvf5ASi9qD5NeprwEv7Jc4r0zAg1GH1ysXi";
 
     private static Retrofit retrofit = null;
 

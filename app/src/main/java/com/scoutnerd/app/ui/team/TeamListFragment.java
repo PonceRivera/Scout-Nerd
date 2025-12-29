@@ -37,14 +37,19 @@ public class TeamListFragment extends Fragment {
         mAdapter = new TeamAdapter();
         mRecyclerView.setAdapter(mAdapter);
 
-        mViewModel = new ViewModelProvider(this).get(TeamListViewModel.class);
+        mViewModel = new androidx.lifecycle.ViewModelProvider(this).get(TeamListViewModel.class);
 
-        // Simulating receiving an event key. In real app, use Bundle or SafeArgs.
-        // For testing "Team List" feature specifically, we can hardcode or rely on what
-        // Home passes.
-        // Let's assume we want to view a specific event for now or just the first one
-        // found.
-        mViewModel.setEventKey(DEFAULT_EVENT_KEY);
+        android.content.SharedPreferences prefs = android.preference.PreferenceManager
+                .getDefaultSharedPreferences(getContext());
+        String eventKey = prefs.getString("selected_event_key", null);
+
+        if (eventKey != null) {
+            mViewModel.setEventKey(eventKey);
+        } else {
+            // Optional: fallback or prompt user
+            android.widget.Toast
+                    .makeText(getContext(), "Please select an event first", android.widget.Toast.LENGTH_LONG).show();
+        }
 
         android.widget.EditText searchInput = view.findViewById(R.id.search_teams);
         if (searchInput != null) {

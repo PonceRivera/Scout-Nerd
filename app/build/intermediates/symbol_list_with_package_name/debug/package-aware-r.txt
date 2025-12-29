@@ -3056,6 +3056,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable ic_search_icon
 drawable ic_settings
 drawable ic_tools
 drawable m3_avd_hide_password
@@ -3200,6 +3201,7 @@ id action_homeFragment_to_pitScoutFragment
 id action_homeFragment_to_settingsFragment
 id action_homeFragment_to_teamListFragment
 id action_image
+id action_matchScoutFragment_to_analyticsFragment
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
@@ -3238,6 +3240,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btn_save_pit
 id btn_start_scouting
 id buttonPanel
 id cache_measures
@@ -3372,7 +3375,12 @@ id immediateStop
 id included
 id indeterminate
 id info
+id input_drivetrain
+id input_language
 id input_match_number
+id input_pit_team_number
+id input_team_number
+id input_weight
 id invisible
 id inward
 id italic
@@ -3518,6 +3526,7 @@ id radio
 id ratio
 id rectangles
 id recycler_events
+id recycler_team_analytics
 id recycler_teams
 id report_drawn
 id reverseSawtooth
@@ -3543,6 +3552,7 @@ id search_bar
 id search_button
 id search_close_btn
 id search_edit_frame
+id search_events
 id search_go_btn
 id search_mag_icon
 id search_plate
@@ -3624,7 +3634,6 @@ id text_input_start_icon
 id text_team_location
 id text_team_nickname
 id text_team_number
-id text_top_teams
 id text_total_matches
 id text_welcome
 id textinput_counter

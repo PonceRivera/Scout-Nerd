@@ -31,6 +31,7 @@
             app:boxStrokeWidth="2dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_pit_team_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -67,6 +68,7 @@
                     app:boxStrokeColor="@color/secondary"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_drivetrain"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/white"/>
@@ -82,6 +84,7 @@
                     app:boxStrokeColor="@color/secondary"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_weight"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="numberDecimal"
@@ -97,6 +100,7 @@
                     app:boxStrokeColor="@color/secondary"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_language"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/white"/>
@@ -106,6 +110,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <Button
+            android:id="@+id/btn_save_pit"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="Save Pit Data"

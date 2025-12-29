@@ -17,19 +17,32 @@
         android:textStyle="bold"
         android:layout_margin="16dp"/>
 
-    <EditText
-        android:id="@+id/search_teams"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="8dp"
-        android:hint="Search team..."
-        android:padding="12dp"
-        android:background="@color/surface"
-        android:textColor="@color/white"
-        android:textColorHint="@color/text_secondary"
-        android:drawableStart="@android:drawable/ic_menu_search"
-        android:drawablePadding="8dp" />
+        android:layout_marginBottom="12dp"
+        app:boxBackgroundColor="@color/surface"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxStrokeWidth="0dp"
+        app:startIconDrawable="@drawable/ic_search_icon"
+        app:startIconTint="@color/text_secondary"
+        app:hintEnabled="false">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_teams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search team..."
+            android:textColor="@color/white"
+            android:textColorHint="@color/text_secondary"
+            android:textSize="16sp"
+            android:paddingVertical="12dp"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_teams"

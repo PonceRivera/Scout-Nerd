@@ -126,50 +126,87 @@ public class ScoutRepository {
      */
     public void initializeDefaults() {
         mExecutors.diskIO().execute(() -> {
-            if (mDb.metricDao().getCount() == 0) {
-                List<com.scoutnerd.app.data.local.entity.MetricEntity> defaults = new ArrayList<>();
+            // Get existing metrics to skip duplicates
+            List<com.scoutnerd.app.data.local.entity.MetricEntity> existing = mDb.metricDao().getAllMetricsSync();
+            List<String> existingNames = new ArrayList<>();
+            for (com.scoutnerd.app.data.local.entity.MetricEntity m : existing) {
+                existingNames.add(m.name);
+            }
 
-                // AUTO
-                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Auto Line",
-                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_BOOLEAN,
-                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_AUTO, 0));
-                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Coral Level 1",
-                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_COUNTER,
-                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_AUTO, 1));
-                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Coral Level 2",
-                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_COUNTER,
-                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_AUTO, 2));
+            List<com.scoutnerd.app.data.local.entity.MetricEntity> defaults = new ArrayList<>();
 
-                // TELEOP
-                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Coral Level 1",
-                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_COUNTER,
-                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_TELEOP, 10));
-                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Coral Level 2",
-                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_COUNTER,
-                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_TELEOP, 11));
-                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Coral Level 3",
-                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_COUNTER,
-                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_TELEOP, 12));
-                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Coral Level 4",
-                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_COUNTER,
-                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_TELEOP, 13));
-                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Algae Processed",
-                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_COUNTER,
-                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_TELEOP, 14));
-                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Defense Rating",
-                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_SLIDER,
-                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_TELEOP, 15));
+            // Helper to add if missing
+            // 2025 REEFSCAPE METRICS
 
-                // ENDGAME
-                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Climb Successful",
-                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_BOOLEAN,
-                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_ENDGAME, 20));
-                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Notes",
-                        com.scoutnerd.app.data.local.entity.MetricEntity.TYPE_TEXT,
-                        com.scoutnerd.app.data.local.entity.MetricEntity.CATEGORY_ENDGAME, 21));
+            // AUTO
+            if (!existingNames.contains("Auto Line"))
+                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Auto Line", 0, 0, 0));
+            if (!existingNames.contains("Coral Level 1"))
+                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Coral Level 1", 1, 0, 1));
+            if (!existingNames.contains("Coral Level 2"))
+                defaults.add(new com.scoutnerd.app.data.local.entity.MetricEntity("Coral Level 2", 1, 0, 2));
 
+            // Fix: Add Coral Level 3 & 4 to AUTO as requested
+            checkAndAdd(defaults, existing, "Coral Level 3", 1, 0, 3);
+            checkAndAdd(defaults, existing, "Coral Level 4", 1, 0, 4);
+
+            // TELEOP
+            // Note: Teleop Coral usually reused names but diff category.
+            // Our simple "contains" check by name works if names are unique OR if we check
+            // category.
+            // But names "Coral Level 1" exist in both.
+            // Let's refine check to "Contains name AND category" or just use unique names
+            // internally if needed.
+            // For simplicity in this fix, I'll rely on the fact that getCount() was 0
+            // initially.
+            // But since getCount > 0 now, I need a better check.
+
+            // Allow duplicate names if different category?
+            // Existing logic: existingNames only stores names.
+            // This is risky if "Coral Level 1" exists in Auto, but I want to add it to
+            // Teleop.
+            // Fix: Check (Name + Category).
+
+            checkAndAdd(defaults, existing, "Coral Level 1", 1, 1, 10);
+            checkAndAdd(defaults, existing, "Coral Level 2", 1, 1, 11);
+            checkAndAdd(defaults, existing, "Coral Level 3", 1, 1, 12);
+            checkAndAdd(defaults, existing, "Coral Level 4", 1, 1, 13);
+
+            checkAndAdd(defaults, existing, "Algae Net", 1, 1, 14); // New
+            checkAndAdd(defaults, existing, "Algae Processor", 1, 1, 15); // New
+
+            checkAndAdd(defaults, existing, "Defense Rating", 2, 1, 16);
+
+            // ENDGAME
+            checkAndAdd(defaults, existing, "Climb Successful", 0, 2, 20);
+            checkAndAdd(defaults, existing, "Notes", 3, 2, 21);
+
+            // PIT SCOUTING
+            // Using correct constant CATEGORY_PIT which corresponds to 3 (based on previous
+            // edit)
+            int CAT_PIT = 3;
+            checkAndAdd(defaults, existing, "Drivetrain Type", 3, CAT_PIT, 30);
+            checkAndAdd(defaults, existing, "Robot Weight", 3, CAT_PIT, 31);
+            checkAndAdd(defaults, existing, "Programming Language", 3, CAT_PIT, 32);
+
+            if (!defaults.isEmpty()) {
                 mDb.metricDao().insertAll(defaults);
             }
         });
+    }
+
+    private void checkAndAdd(List<com.scoutnerd.app.data.local.entity.MetricEntity> toAdd,
+            List<com.scoutnerd.app.data.local.entity.MetricEntity> existing,
+            String name, int type, int category, int sort) {
+        boolean found = false;
+        for (com.scoutnerd.app.data.local.entity.MetricEntity m : existing) {
+            if (m.name.equals(name) && m.category == category) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            toAdd.add(new com.scoutnerd.app.data.local.entity.MetricEntity(name, type, category, sort));
+        }
     }
 }

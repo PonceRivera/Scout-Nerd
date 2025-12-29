@@ -19,6 +19,7 @@ drawable ic_calendar
 drawable ic_gamepad
 drawable ic_group
 drawable ic_launcher
+drawable ic_search_icon
 drawable ic_settings
 drawable ic_tools
 id action_homeFragment_to_analyticsFragment
@@ -27,7 +28,9 @@ id action_homeFragment_to_matchScoutFragment
 id action_homeFragment_to_pitScoutFragment
 id action_homeFragment_to_settingsFragment
 id action_homeFragment_to_teamListFragment
+id action_matchScoutFragment_to_analyticsFragment
 id analyticsFragment
+id btn_save_pit
 id btn_start_scouting
 id card_analytics
 id card_browse_teams
@@ -38,7 +41,12 @@ id card_settings
 id divider
 id eventSelectionFragment
 id homeFragment
+id input_drivetrain
+id input_language
 id input_match_number
+id input_pit_team_number
+id input_team_number
+id input_weight
 id layout_current_event
 id matchScoutFragment
 id metrics_container
@@ -46,7 +54,9 @@ id nav_graph
 id nav_host_fragment
 id pitScoutFragment
 id recycler_events
+id recycler_team_analytics
 id recycler_teams
+id search_events
 id search_teams
 id settingsFragment
 id teamListFragment
@@ -56,7 +66,6 @@ id text_current_event_name
 id text_team_location
 id text_team_nickname
 id text_team_number
-id text_top_teams
 id text_total_matches
 id text_welcome
 layout activity_main
